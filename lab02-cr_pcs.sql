@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS pcs;
+
+CREATE TABLE pcs(id INTEGER PRIMARY KEY, room_id INTEGER,
+	note VARCHAR(500), ip_addr VARCHAR(45),mac_addr VARCHAR(17));
+
+
