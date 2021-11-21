@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS children;
+
+CREATE TABLE children(id INTEGER PRIMARY KEY, lname VARCHAR(50),
+fname VARCHAR(50), mname VARCHAR(50), yob INTEGER, gender CHAR(1),
+wage DECIMAL, father INTEGER, mother INTEGER, twin INTEGER DEFAULT -1);

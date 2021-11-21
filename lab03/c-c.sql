@@ -1,0 +1,8 @@
+ALTER TABLE children DROP CONSTRAINT IF EXISTS child_men;
+ALTER TABLE children DROP CONSTRAINT IF EXISTS child_women;
+
+ALTER TABLE children ADD CONSTRAINT child_men FOREIGN KEY (father)
+        REFERENCES men (id) ON DELETE CASCADE;
+ALTER TABLE children ADD CONSTRAINT child_women FOREIGN KEY (mother)
+        REFERENCES women (id) ON DELETE CASCADE;
+

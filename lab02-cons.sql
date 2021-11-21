@@ -1,0 +1,17 @@
+ALTER TABLE installs DROP CONSTRAINT IF EXISTS inst_soft;
+ALTER TABLE installs DROP CONSTRAINT IF EXISTS inst_pcs;
+ALTER TABLE pcs DROP CONSTRAINT IF EXISTS pcs_rooms;
+ALTER TABLE rooms DROP CONSTRAINT IF EXISTS rooms_emp;
+
+
+ALTER TABLE installs ADD CONSTRAINT inst_soft FOREIGN KEY (soft_id)
+	REFERENCES soft (id);
+
+ALTER TABLE installs ADD CONSTRAINT inst_pcs FOREIGN KEY (pc_id)
+	REFERENCES pcs (id);
+
+ALTER TABLE pcs ADD CONSTRAINT pcs_rooms FOREIGN KEY (room_id)
+	REFERENCES rooms (id);
+
+ALTER TABLE rooms ADD CONSTRAINT rooms_emp FOREIGN KEY (emp_id)
+	REFERENCES employees (id);
